@@ -1,0 +1,13 @@
+server:
+  port: "8080"
+  read_timeout: 10s
+  write_timeout: 10s
+  max_header_bytes: 1048576
+  shutdown_timeout: 30s
+
+data:
+  data_path: "data/elevation.bin"
+  header_path: "data/elevation.bin.header"
+
+performance:
+  gomaxprocs: 0

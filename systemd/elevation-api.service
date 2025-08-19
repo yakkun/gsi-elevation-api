@@ -1,0 +1,22 @@
+[Unit]
+Description=GSI Elevation API Service
+After=network.target
+
+[Service]
+Type=simple
+User=elevation
+Group=elevation
+WorkingDirectory=/opt/elevation-api
+ExecStart=/opt/elevation-api/elevation-api -config /opt/elevation-api/config/config.yaml
+Restart=always
+RestartSec=5
+
+StandardOutput=journal
+StandardError=journal
+
+LimitNOFILE=65536
+
+Environment="GOMAXPROCS=4"
+
+[Install]
+WantedBy=multi-user.target
